@@ -1,0 +1,399 @@
+:root {
+    --base-size: 12pt;
+    /*--dark-header: rgb(147, 54, 37);
+    --light-header: rgb(205, 76, 53);*/
+    --dark-header: rgb(81, 89, 55);
+    --light-header: rgb(90, 97, 63);
+    --my-red: rgb(147, 54, 37)
+  }
+  
+  
+  body{
+    /*margin-top: 0px;
+    margin-bottom: 5px;
+    margin-left: 2px;
+    margin-right: 2px;*/
+    margin: 0px;
+    background-color: rgb(252,252,252);
+    font-family: 'PT Serif', serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 11pt; /* fallback for bad browser */
+    font-size: var(--base-size);
+  }
+  
+  
+  /* divs for aligning*/
+  .pageextl {
+    width: calc(50% - 200px);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    float:left;
+    text-align: right;
+    position: fixed;
+    min-height: calc(100vh);
+  
+  }
+  /*background-color: rgb(250,252,255);*/
+  
+  .pageextr {
+    width: calc(50% + 200px);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    float:right;
+  }
+  
+  
+  .page {
+    background-color: rgb(252,252,252);
+    max-width: 800px;
+    margin: auto;
+    padding: 0 2pt;
+  }
+  
+  .pagefull {
+    max-width: none;
+  }
+  
+  
+  .contentl {
+    max-width: 300px;
+    margin-right: 10px;
+    float: right;
+    text-align: center;
+  
+  }
+  
+  .contentr {
+    max-width: 800px;
+    margin-left: 20px;
+    border: 0px solid black;
+    padding: 50px 0px;
+    /* vertical height - contentr padding - header height - header padding */
+    min-height: calc(100vh - 100px - 200px - 31pt)
+  }
+  
+  .header{
+    /*background: url(img/my_desert.jpg), linear-gradient(0deg, rgba(146,197,241,1) 0%, rgba(105,165,223,1) 100%),rgb(146,197,241);
+    background-position: center -250;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+    background-size:auto;*/
+    /*background-size:cover; */
+    /*filter: brightness(160%) saturate(35%);*/
+    /*padding-bottom:13pt;*/
+    display: table;
+    height: 200px;
+    padding-top: 15pt;
+    padding-bottom: 15pt;
+    border-bottom: 1px solid black;
+    width:100%;
+    margin: 0 auto;
+  
+  }
+  
+  header{
+    /*background: url(img/my_desert.jpg), linear-gradient(0deg, rgba(146,197,241,1) 0%, rgba(105,165,223,1) 100%),rgb(146,197,241);
+    background-position: center -250;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+    background-size:auto;*/
+    /*background-size:cover; */
+    /*filter: brightness(160%) saturate(35%);*/
+    /*padding-bottom:13pt;*/
+    /*background: url(img/bg-phx.jpg), linear-gradient(0deg, rgba(146,197,241,1) 0%, rgba(105,165,223,1) 100%),rgb(146,197,241);
+    background-position: center calc(-18vw);
+    background-size: 100% auto;*/
+  
+  }
+  
+  
+  
+  .header h1{
+    white-space: nowrap;
+    display: table-cell;
+    margin: auto;
+    text-align: right;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-size: 44pt; /* fallback for bad browser */
+    font-size: calc(var(--base-size) * 4);
+    font-weight: 700;
+    font-style: italic;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    padding-right: 20px;
+    vertical-align: middle;
+  }
+  
+  header h2{
+    display: table-cell;
+    float: left;
+    font-family: 'Oswald', sans-serif;
+    /*color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;*/
+    color: black;
+    font-size: 28pt; /* fallback for bad browser */
+    font-size: calc(var(--base-size) * 2.5);
+    font-weight: 700;
+    font-variant: small-caps;
+    vertical-align: bottom;
+    padding: 5pt 5pt;
+    margin:5pt 5pt;
+    margin-left: 5pt;
+  }
+  
+  a {
+    text-decoration: none;
+    color: rgb(50, 115, 228);
+    font-weight:600;
+  }
+  
+  
+  
+  .menucontainer {
+    background-color: rgb(252,252,252);
+    /*
+  position: fixed;
+    top: -15;
+    display: flex;
+  
+    right: 0;
+    width: 100%;*/
+    padding: none;
+    margin: auto;
+    text-align: right;
+  }
+  
+  ul.menu {
+    font-weight: 800;
+    font-family: 'Merriweather', serif;
+    font-size: 13pt; /* fallback for bad browser */
+    font-size: calc(var(--base-size) * 13 / 11);
+      list-style-type: none;
+      padding: 0;
+      overflow: hidden;
+      /*border: 1px solid rgb(120, 142, 181);*/
+        font-style: italic;
+          text-shadow: none;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0;
+          width: auto;
+          float:right;
+        padding-top: 8pt;
+  }
+  
+  ul.menu li {float: left;}
+  
+  
+  h3{
+    padding: 0;
+    margin-top: 1pt;
+    margin-bottom: 5pt;
+    font-style: italic;
+    font-size: 15pt; /* fallback for bad browser */
+    font-size: calc(var(--base-size) * 15 / 11);
+    color:rgb(205, 76, 53);
+    color: var(--light-header);
+  }
+  
+  h4{
+    padding: 0;
+    margin-top: 1pt;
+    margin-bottom: 5pt;
+    font-size: 13pt; /* fallback for bad browser */
+    font-size: calc(var(--base-size) * 13 / 11);
+    font-style: italic;
+    color:rgb(205, 76, 53);
+    color: var(--light-header);
+  }
+  
+  
+  hr {
+    border: 0px;
+    border-top: 1px dotted gray;
+    margin-top: 10pt;
+    padding-bottom: 5pt;
+  }
+  
+  
+  ul.menu li a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+      background-color: rgb(252,252,252);
+  
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  ul.menu li a:hover:not(.active) {
+    color: rgb(50, 115, 228);
+  }
+  
+  ul.menu li a:hover {
+    text-decoration: underline;
+  }
+  
+  ul.menu li a.active {
+    color: rgb(147, 54, 37);
+    color: var(--dark-header);
+  }
+  
+  a.active {
+    /*background-color: rgb(120, 142, 181);*/
+    /*background-color: black;*/
+    color: rgb(147, 54, 37);
+    color: var(--dark-header);
+  }
+  
+  ul.menu li.right {float: right;}
+  
+  @media screen and (max-width: 1000px){
+      /*ul.menu li.right,
+      ul.menu li {float: none;}*/
+      .header{
+          height: 100px;
+              padding-bottom:10px;
+              padding-top: 10px;}
+      .header h1 {
+        font-size: 50px;
+        margin-left: 20px;
+        padding-left: 20px;
+        text-align: left;
+      }
+      .pageextl {
+        position: inherit;
+  
+      }
+      .contentl {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+          top: 0;
+      }
+      .pagel {
+        position: inherit;
+  
+      }
+      .page {
+        }
+  
+  }
+  
+  p{
+    margin: 5px;
+    padding-bottom: 5pt;
+    text-align: justify;
+  }
+  
+  .mns {
+    font-family: 'Ubuntu Mono', monospace;
+    font-weight: 800;
+  }
+  
+  
+  .tomato {
+    color: rgb(147, 54, 37);
+    /*color: var(--dark-header);*/
+  }
+  
+  
+  
+  ul.icons {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 460px;
+    font-weight: 800;
+    font-family: 'Merriweather', serif;
+    font-size:11pt;
+      list-style-type: none;
+      padding: 0;
+      overflow: hidden;
+      /*border: 1px solid rgb(120, 142, 181);*/
+        font-style: italic;
+          text-shadow: none;
+  }
+  
+  ul.icons li {float: right;}
+  
+  ul.icons li a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 10px 10px;
+      text-decoration: none;
+      background-color: rgb(252,252,252);
+  
+  }
+  
+  ul.icons li img {
+    height: 25px;
+    width: 25px;
+  }
+  
+  ul.icons li a:hover:not(.active) img{
+    filter: opacity(50%);
+  }
+  
+  
+  
+  .filtercolor {
+    filter: invert(33%) sepia(3%) saturate(5832%) hue-rotate(56deg) brightness(93%) contrast(78%);
+  }
+  
+  
+  
+  
+  .page p{
+    padding-left: 5pt;
+  }
+  
+  
+  
+  
+  
+  ::selection {
+    background-color: black;
+    color: white;
+  }
+  
+  ::-moz-selection {
+    background-color: black;
+    color: white;
+  }
+  
+  
+  
+  /* For blog */
+  
+  blockquote {
+    background: #f5f5f5;
+    border-left: 4pt solid rgb(205, 76, 53);
+    border-left: 4pt solid   var(--light-header);
+    border-right: 0.5pt solid rgb(205, 76, 53);
+    border-right: 0.5pt solid   var(--light-header);
+    width: auto;
+    margin-right: 0;
+    padding: 5pt 20pt 5pt 5pt;
+    text-align: justify;
+  }
+  
+  
+  code {
+    background: #f5f5f5;
+  }
+  
+  
+  
+  .page img {
+    max-width: 100%;
+  }
+  
