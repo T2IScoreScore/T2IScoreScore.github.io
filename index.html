@@ -37,6 +37,11 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script
+      type="text/javascript"
+      src="./static/js/sort-table.js"
+      defer
+    ></script>
 
 <!-- logo stuff by Michael -->
 <style>
@@ -50,6 +55,71 @@
     font-family: 'Share Tech Mono', monospace;
     font-size: 1.05em;
     */
+}
+#results {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+thead {
+  background: #ddd;
+}
+
+#results table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  background-color: var(--UCLA-darkblue);
+  color: white;
+}
+
+table#results.js-sort-0 tbody tr td:nth-child(1),
+table#results.js-sort-1 tbody tr td:nth-child(2),
+table#results.js-sort-2 tbody tr td:nth-child(3),
+table#results.js-sort-3 tbody tr td:nth-child(4),
+table#results.js-sort-4 tbody tr td:nth-child(5),
+table#results.js-sort-5 tbody tr td:nth-child(6),
+table#results.js-sort-6 tbody tr td:nth-child(7),
+table#results.js-sort-7 tbody tr td:nth-child(8),
+table#results.js-sort-8 tbody tr td:nth-child(9),
+table#results.js-sort-9 tbody tr td:nth-child(10),
+table#results.js-sort-10 tbody tr td:nth-child(11),
+table#results.js-sort-11 tbody tr td:nth-child(12),
+table#results.js-sort-12 tbody tr td:nth-child(13),
+table#results.js-sort-13 tbody tr td:nth-child(14),
+table#results.js-sort-14 tbody tr td:nth-child(15) {
+  background: #dee;
+}
+
+#results td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#results tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+#results tr:hover {
+  background-color: #ddd;
+}
+
+.js-sort-number:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.best-score-text {
+  color: #c6011f;
 }
 </style>
 
@@ -272,6 +342,217 @@
       <h3 class="title is-4">Under construction! Based on the nerfies page</h3>
     </div>
 
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Leaderboard</h2>
+        <table class="js-sort-table" id="results">
+          <thead>
+            <td class="js-sort-number"><strong>Method</strong></td>
+            <td class="js-sort-number"><strong>Average_S</strong></td>
+            <td class="js-sort-number"><strong>Average_V</strong></td>
+            <td class="js-sort-number"><strong>Synthetic_S</strong></td>
+            <td class="js-sort-number"><strong>Synthetic_V</strong></td>
+            <td class="js-sort-number"><strong>Natural_S</strong></td>
+            <td class="js-sort-number"><strong>Natural_V</strong></td>
+            <td class="js-sort-number"><strong>RealError_S</strong></td>
+            <td class="js-sort-number"><strong>RealError_V</strong></td>
+          </thead>
+          <tr>
+            <td>DSG + InstructBLIP</td>
+            <td><b class="best-score-text">0.802</b></td>
+            <td>0.843</td>
+            <td><b class="best-score-text">0.861</b></td>
+            <td>0.888</td>
+            <td>0.702</td>
+            <td>0.815</td>
+            <td>0.658</td>
+            <td>0.689</td>
+          </tr>
+          <tr>
+            <td>DSG + LLaVA-1.5</td>
+            <td><u><b>0.800</b></u></td>
+            <td>0.825</td>
+            <td><u><b>0.838</b></u></td>
+            <td>0.855</td>
+            <td><b class="best-score-text">0.749</b></td>
+            <td>0.751</td>
+            <td><u><b>0.696</b></u></td>
+            <td>0.768</td>
+          </tr>
+          <tr>
+            <td>DSG + BLIP1</td>
+            <td>0.769</td>
+            <td>0.806</td>
+            <td>0.817</td>
+            <td>0.841</td>
+            <td><u><b>0.710</b></u></td>
+            <td>0.751</td>
+            <td>0.628</td>
+            <td>0.714</td>
+          </tr>
+          <tr>
+            <td>TIFA + InstructBLIP</td>
+            <td>0.765</td>
+            <td>0.850</td>
+            <td>0.802</td>
+            <td>0.867</td>
+            <td>0.651</td>
+            <td>0.828</td>
+            <td><b class="best-score-text">0.716</b></td>
+            <td>0.805</td>
+          </tr>
+          <tr>
+            <td>DSG + LLaVA-1.5 (w/prompt eng)</td>
+            <td>0.756</td>
+            <td>0.805</td>
+            <td>0.821</td>
+            <td>0.838</td>
+            <td>0.689</td>
+            <td>0.772</td>
+            <td>0.559</td>
+            <td>0.706</td>
+          </tr>
+          <tr>
+            <td>TIFA + LLaVA-1.5</td>
+            <td>0.745</td>
+            <td>0.843</td>
+            <td>0.792</td>
+            <td>0.875</td>
+            <td>0.628</td>
+            <td>0.834</td>
+            <td>0.667</td>
+            <td>0.727</td>
+          </tr>
+          <tr>
+            <td>TIFA + LLaVA-1.5 (w/prompt eng)</td>
+            <td>0.744</td>
+            <td>0.819</td>
+            <td>0.792</td>
+            <td>0.852</td>
+            <td>0.640</td>
+            <td>0.756</td>
+            <td>0.645</td>
+            <td>0.744</td>
+          </tr>
+          <tr>
+            <td>ALIGNScore</td>
+            <td>0.739</td>
+            <td><b class="best-score-text">0.928</b></td>
+            <td>0.776</td>
+            <td><b class="best-score-text">0.941</b></td>
+            <td>0.702</td>
+            <td><b class="best-score-text">0.926</b></td>
+            <td>0.626</td>
+            <td><u><b>0.879</b></u></td>
+          </tr>
+          <tr>
+            <td>TIFA+ BLIP1</td>
+            <td>0.738</td>
+            <td>0.818</td>
+            <td>0.788</td>
+            <td>0.841</td>
+            <td>0.622</td>
+            <td>0.779</td>
+            <td>0.640</td>
+            <td>0.764</td>
+          </tr>
+          <tr>
+            <td>CLIPScore</td>
+            <td>0.714</td>
+            <td><u><b>0.907</b></u></td>
+            <td>0.750</td>
+            <td><u><b>0.905</b></u></td>
+            <td>0.580</td>
+            <td><u><b>0.915</b></u></td>
+            <td>0.693</td>
+            <td><b class="best-score-text">0.903</b></td>
+          </tr>
+          <tr>
+            <td>TIFA + MPlug</td>
+            <td>0.710</td>
+            <td>0.806</td>
+            <td>0.726</td>
+            <td>0.806</td>
+            <td>0.669</td>
+            <td>0.842</td>
+            <td>0.682</td>
+            <td>0.774</td>
+          </tr>
+          <tr>
+            <td>DSG + MPlug</td>
+            <td>0.688</td>
+            <td>0.755</td>
+            <td>0.735</td>
+            <td>0.771</td>
+            <td>0.619</td>
+            <td>0.706</td>
+            <td>0.564</td>
+            <td>0.731</td>
+          </tr>
+          <tr>
+            <td>LLMScore Over</td>
+            <td>0.577</td>
+            <td>0.735</td>
+            <td>0.616</td>
+            <td>0.728</td>
+            <td>0.444</td>
+            <td>0.767</td>
+            <td>0.541</td>
+            <td>0.736</td>
+          </tr>
+          <tr>
+            <td>LLMScore EC</td>
+            <td>0.488</td>
+            <td>0.736</td>
+            <td>0.502</td>
+            <td>0.711</td>
+            <td>0.362</td>
+            <td>0.805</td>
+            <td>0.544</td>
+            <td>0.773</td>
+          </tr>
+          <tr>
+            <td>TIFA + Fuyu</td>
+            <td>0.387</td>
+            <td>0.672</td>
+            <td>0.445</td>
+            <td>0.673</td>
+            <td>0.235</td>
+            <td>0.757</td>
+            <td>0.297</td>
+            <td>0.593</td>
+          </tr>
+          <tr>
+            <td>VIEScore</td>
+            <td>0.378</td>
+            <td>0.518</td>
+            <td>0.425</td>
+            <td>0.537</td>
+            <td>0.224</td>
+            <td>0.445</td>
+            <td>0.332</td>
+            <td>0.507</td>
+          </tr>
+          <tr>
+            <td>DSG + Fuyu</td>
+            <td>0.358</td>
+            <td>0.660</td>
+            <td>0.455</td>
+            <td>0.687</td>
+            <td>0.215</td>
+            <td>0.710</td>
+            <td>0.100</td>
+            <td>0.508</td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </section>
 
