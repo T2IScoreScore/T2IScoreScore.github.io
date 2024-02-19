@@ -19,6 +19,7 @@
  * @returns void
  */
 function sortTable(Table, col, dir) {
+  dir = -1;
   var sortClass, i;
 
   // get previous sort column

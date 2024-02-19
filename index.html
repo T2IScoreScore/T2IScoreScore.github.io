@@ -97,7 +97,7 @@ table#results.js-sort-11 tbody tr td:nth-child(12),
 table#results.js-sort-12 tbody tr td:nth-child(13),
 table#results.js-sort-13 tbody tr td:nth-child(14),
 table#results.js-sort-14 tbody tr td:nth-child(15) {
-  background: #dee;
+  border-left: #dee;
 }
 
 #results td {
@@ -105,9 +105,6 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
   padding: 8px;
 }
 
-#results tr:nth-child(even) {
-  background-color: #f5f5f5;
-}
 
 #results tr:hover {
   background-color: #ddd;
@@ -121,6 +118,19 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
 .best-score-text {
   color: #c6011f;
 }
+
+.tifa {
+  background-color: rgb(252, 220, 220);
+}
+
+.dsg {
+  background-color: rgb(220, 239, 245);
+}
+
+.llmscore {
+  background-color: lightgoldenrodyellow;
+}
+
 </style>
 
 </head>
@@ -345,7 +355,6 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
   </div>
 </section>
 
-
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
@@ -353,17 +362,26 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
         <h2 class="title is-3">Leaderboard</h2>
         <table class="js-sort-table" id="results">
           <thead>
-            <td class="js-sort-number"><strong>Method</strong></td>
-            <td class="js-sort-number"><strong>Average_S</strong></td>
-            <td class="js-sort-number"><strong>Average_V</strong></td>
-            <td class="js-sort-number"><strong>Synthetic_S</strong></td>
-            <td class="js-sort-number"><strong>Synthetic_V</strong></td>
-            <td class="js-sort-number"><strong>Natural_S</strong></td>
-            <td class="js-sort-number"><strong>Natural_V</strong></td>
-            <td class="js-sort-number"><strong>RealError_S</strong></td>
-            <td class="js-sort-number"><strong>RealError_V</strong></td>
+            <tr style="background: -webkit-linear-gradient(#444393, #09A5D9);">
+              <td></td>
+              <td colspan="2"><strong style="color: white;">Average (All Images)</strong></td>
+              <td colspan="2"><strong style="color: white;">Synthetic Errors</strong></td>
+              <td colspan="2"><strong style="color: white;">Natural Images</strong></td>
+              <td colspan="2"><strong style="color: white;">Natural Errors</strong></td>
+            </tr>
+            <tr style="background-color: rgb(213,213,213);">
+              <td class="js-sort-number"><strong>Method</strong></td>
+              <td class="js-sort-number"><strong>S<sub>Avg</sub></strong></td>
+              <td class="js-sort-number"><strong>V<sub>Avg</sub></strong></td>
+              <td class="js-sort-number"><strong>S<sub>Synth</sub></strong></td>
+              <td class="js-sort-number"><strong>V<sub>Synth</sub></strong></td>
+              <td class="js-sort-number"><strong>S<sub>Nat</sub></strong></td>
+              <td class="js-sort-number"><strong>V<sub>Nat</sub></strong></td>
+              <td class="js-sort-number"><strong>S<sub>Real</sub></strong></td>
+              <td class="js-sort-number"><strong>V<sub>Real</sub></strong></td>  
+            </tr>
           </thead>
-          <tr>
+          <tr class="dsg">
             <td>DSG + InstructBLIP</td>
             <td><b class="best-score-text">0.802</b></td>
             <td>0.843</td>
@@ -374,7 +392,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td>0.658</td>
             <td>0.689</td>
           </tr>
-          <tr>
+          <tr class="dsg">
             <td>DSG + LLaVA-1.5</td>
             <td><u><b>0.800</b></u></td>
             <td>0.825</td>
@@ -385,7 +403,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td><u><b>0.696</b></u></td>
             <td>0.768</td>
           </tr>
-          <tr>
+          <tr class="dsg">
             <td>DSG + BLIP1</td>
             <td>0.769</td>
             <td>0.806</td>
@@ -396,7 +414,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td>0.628</td>
             <td>0.714</td>
           </tr>
-          <tr>
+          <tr class="tifa">
             <td>TIFA + InstructBLIP</td>
             <td>0.765</td>
             <td>0.850</td>
@@ -407,7 +425,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td><b class="best-score-text">0.716</b></td>
             <td>0.805</td>
           </tr>
-          <tr>
+          <tr class="dsg">
             <td>DSG + LLaVA-1.5 (w/prompt eng)</td>
             <td>0.756</td>
             <td>0.805</td>
@@ -418,7 +436,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td>0.559</td>
             <td>0.706</td>
           </tr>
-          <tr>
+          <tr class="tifa">
             <td>TIFA + LLaVA-1.5</td>
             <td>0.745</td>
             <td>0.843</td>
@@ -429,7 +447,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td>0.667</td>
             <td>0.727</td>
           </tr>
-          <tr>
+          <tr class="tifa">
             <td>TIFA + LLaVA-1.5 (w/prompt eng)</td>
             <td>0.744</td>
             <td>0.819</td>
@@ -451,7 +469,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td>0.626</td>
             <td><u><b>0.879</b></u></td>
           </tr>
-          <tr>
+          <tr class="tifa">
             <td>TIFA+ BLIP1</td>
             <td>0.738</td>
             <td>0.818</td>
@@ -473,7 +491,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td>0.693</td>
             <td><b class="best-score-text">0.903</b></td>
           </tr>
-          <tr>
+          <tr class="tifa">
             <td>TIFA + MPlug</td>
             <td>0.710</td>
             <td>0.806</td>
@@ -484,7 +502,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td>0.682</td>
             <td>0.774</td>
           </tr>
-          <tr>
+          <tr class="dsg">
             <td>DSG + MPlug</td>
             <td>0.688</td>
             <td>0.755</td>
@@ -495,7 +513,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td>0.564</td>
             <td>0.731</td>
           </tr>
-          <tr>
+          <tr class="llmscore">
             <td>LLMScore Over</td>
             <td>0.577</td>
             <td>0.735</td>
@@ -506,7 +524,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td>0.541</td>
             <td>0.736</td>
           </tr>
-          <tr>
+          <tr class="llmscore">
             <td>LLMScore EC</td>
             <td>0.488</td>
             <td>0.736</td>
@@ -517,7 +535,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td>0.544</td>
             <td>0.773</td>
           </tr>
-          <tr>
+          <tr class="tifa">
             <td>TIFA + Fuyu</td>
             <td>0.387</td>
             <td>0.672</td>
@@ -529,7 +547,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td>0.593</td>
           </tr>
           <tr>
-            <td>VIEScore</td>
+            <td>VIEScore + LLaVA-1.5</td>
             <td>0.378</td>
             <td>0.518</td>
             <td>0.425</td>
@@ -539,7 +557,7 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td>0.332</td>
             <td>0.507</td>
           </tr>
-          <tr>
+          <tr class="dsg">
             <td>DSG + Fuyu</td>
             <td>0.358</td>
             <td>0.660</td>
@@ -551,6 +569,16 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
             <td>0.508</td>
           </tr>
         </table>
+        <p><emph>Table 1</emph>: 
+          Click on any column title to sort the table by that variable. 
+          <emph>S<sub>partition</sub></emph> metrics refer to our Spearman correlation-based measure of how correctly a given metric ranks the faithfulness of generated images to prompts within sets.
+          <emph>V<sub>partition</sub></emph> metrics refer to how well a given metric separates clusters of images in terms of faithfulness scoring with the two sample Kolmogoro&ndash;Smirnov statistic.
+          <emph>All</emph> partition is the average of the scores across all prompt IDs in our dataset.
+          <emph>Synth</emph> partition refers to synthetic errors realized by synthetic images. These are the easiest types of errors to detect.
+          <emph>Nat</emph> partition refers to natural images collected from stock image websites taken in a photoshoot, where "errors" are realized by a prompt being assigned to the set of images to produce natural "errors" of images that vary from the prompt.
+          <emph>Real</emph> partition refers to <i>natural errors</i> produced by text-to-image models, which are the most difficult to detect.
+          <span class="llmscore">LLMScore</span>, <span class="dsg">DSG</span>, and <span class="tifa">TIFA</span> variants are color coded for readability.
+        </p>
       </div>
     </div>
   </div>
