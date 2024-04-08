@@ -342,7 +342,8 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
       </h2>
       <h3 class="subtitle ">
         Surprisingly, we find that the <b>state-of-the-art LM-based metrics</b> (in terms of human preference correlations) <b>struggle to outperform simple feature-space
-        metrics like CLIPScore</b> at ordering or separating closely related sets of images.
+        metrics like CLIPScore</b> at ordering or separating closely related sets of images. This surprising result is contrary to claims in many papers presenting novel metrics;
+        the benefits of using more complicated systems become much less pronounced in more challenging and realistic evaluation settings such as ours.
       </h3>
       <h3 class="subtitle ">
         Our benchmark dataset consists of 165 prompts, each with a connected <emph>Semantic Error Graph</emph> (SEG) of 4 to 76 images arranged by specific semantic errors relative to the prompt (see above image for example).
@@ -375,9 +376,6 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
         <li><b>*<sub>Real</sub></b> is the average over SEGs containing <i>natural errors</i> from real text-to-image model generation attempts. <b>This is both the hardest to score and the most construct-valid</b>.</li>
         <li>Because we tested several different backend LLMs for <span class="dsg">DSG</span> and <span class="tifa">TIFA</span>, their rows are color coded for readability.</li>
       </ul>
-
-
-      
     </div>
     <table class="js-sort-table" id="results">
       <thead>
@@ -588,14 +586,19 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
         <td>0.508</td>
       </tr>
     </table>
-
+  <div class="container is-max-desktop">
+    <p>
+      We evaluate the CLIPScore, ALIGNScore, TIFA, DSG, LLMScore, and VIEScore metrics, using a variety of VQA and VLM models where appropriate.
+      On all separation scores, the simplest CLIP and ALIGNScore methods outperform the more complex LLM-based metrics.
+      On the hardest partition for the ordering score, <b>Ord<sub>Real</sub></b>, CLIPScore comes within 2% the performance of the best metric.
+    </p>
   </div>
+</div>
 </section>
 
 
-<section class="section">
+<!--section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -618,29 +621,51 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
       </div>
     </div>
   </div>
-</section>
+</section-->
 
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Details on the Semantic Error Graphs (SEGs)</h2>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Details on the <emph class="logostyle">TS2</emph> Semantic Error Graphs (SEGs)</h2>
         <div class="content has-text-justified">
           <p>
-            With advances in the quality of text-to-image (T2I) models has come interest in benchmarking their performance in terms <i>prompt faithfulness</i>&mdash;semantic coherence of generated images to their conditioning prompts.
-            Leveraging advances in cross-modal embeddings and vision-language models (VLMs), a variety of T2I faithfulness metrics have been proposed.
-            However, these metrics are not rigorously compared and benchmarked, instead presented against a single weak baseline using correlation to human Likert scores over a set of easy-to-discriminate images. 
-            We introduce <emph class="logostyle">T2IScoreScore</emph>, a carefully curated set of 
-            <i>semantic error graphs</i> consisting of a prompt and a set of images containing increasing numbers of errors. 
-            This allows us to rigorously judge whether a prompt faithfulness metric under test can correctly order images with respect to their objective error count and significantly discriminate 
-            between different error nodes novel scores derived from established statistical tests.
-            Surprisingly, we find that the state-of-the-art VLM-based 
-            metrics (e.g., TIFA, DSG, LLMScore, VIEScore) we tested fail to significantly outperform simple feature-based metrics like CLIPScore, particularly on a hard subset of naturally-occurring T2I model 
-            errors.
-            <emph class="logostyle">T2IScoreScore</emph> will enable the development of better T2I prompt faithfulness metrics by enabling their rigorous comparison on near-neighbor images with significant semantic differences.
-
+            Images in <emph class="logostyle">TS2</emph> are collected from a variety of sources, including multiple Stable Diffusion variants, DALL-E 2, and the free stock image website <a href="https://www.pexels.com/">Pexels</a>.
+            Prompts that weren't hand-written were sampled from <a href="https://cocodataset.org/#home">MS COCO</a> and <a href="https://huggingface.co/datasets/nateraw/parti-prompts">PartiPrompts</a>.
+            The SEGs contain a variety of errors, including missing objects, incorrect object properties, composition errors, and verb errors. SEG distributions depicted:
+          </p>
+          <img src="static/images/distribution.png" style="width: 100%;" alt="The distribution of errors in our dataset."/>
+          <p>
+            As mentioned above, <emph class="logostyle">TS2</emph> contains three partitions of SEGs; <b>Synthetic Errors</b>, <b>Natural Images</b>, and <b>Natural Errors</b>.
+            They primarily differ in the order in which the images, prompt, and error graph were produced.
+            For the <b>Synth</b> group of SEGs, from an initial prompt an error graph was designed, and images were generated to fill the nodes in the graph. (left side of below figure).
+            For the <b>Nat</b> group of SEGs, images were collected from stock photo websites and prompts were designed to place them in a constructed error graph (middle of below figure).
+            For the <b>Real</b> group of SEGs, a single prompt was used to produce many images, including <b>real T2I generation errors.</b> These were then sorted into an error graph (right of below figure).
+          </p>
+          &nbsp;
+          <img src="static/images/ts2_three_types.drawio.svg" style="width: 100%;" alt="The distribution of errors in our dataset."/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>&nbsp;<br>&nbsp;
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Details on the <emph class="logostyle">TS2</emph> meta-metrics</h2>
+        <div class="content has-text-justified">
+          <p>
+            If you really want to know how the meta-metrics work, you should probably <a href="https://arxiv.org/abs/2404.04251">read the paper!</a>
+            But basically, they are assessed by having a metric score each image through every walk down each error graph, 
+            using Spearman's rank correlation coefficient against expected error count within each walk to assess correctness of ordering,
+            and the two-sample Kolmogorov&ndash;Smirnov statistic is assessed between every adjacent pair of nodes in a walk to assess how well
+            a metric separates semantically different populations of images relative to a specific prompt.
+          </p>
+          <p>
+            The dynamic range of both metrics ranges from 0 to 1 (in the paper we scale this to 100 for readability). Although the scores may look high
+            already, in principle this should be a very easy task. Although the semantic errors we mark are "objective", this objectivity is implictly 
+            a human judgement; thus the human performance barrier on this task is near 100%. <b>For a quality T2I faithfulness metric, <i>this effect</i> is really the most important one to capture.</b>
           </p>
         </div>
       </div>
@@ -675,7 +700,6 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
       </div>
     </div>
     <!--/ Concurrent Work. -->
-
   </div>
 
   <div class="hero container">
@@ -684,11 +708,14 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
   
   <div class="container is-max-desktop content" id="BibTeX">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@unpublished{saxon2024ts2,
-  author    = {Saxon, Michael and Jahara, Fatima and Khoshnoodi, Mahsa and Lu, Yujie and Sharma, Aditya and Wang, William Yang},
-  title     = {Who Evaluates the Evaluations? Objectively Scoring Text-to-Image Prompt Coherence Metrics with T2IScoreScore (TS2)},
-  year      = {2024},
-  url       = {https://T2IScoreScore.github.io/}
+    <pre><code>@misc{saxon2024evaluates,
+      title={Who Evaluates the Evaluations? Objectively Scoring Text-to-Image Prompt Coherence Metrics with T2IScoreScore (TS2)}, 
+      author={Michael Saxon and Fatima Jahara and Mahsa Khoshnoodi and Yujie Lu and Aditya Sharma and William Yang Wang},
+      year={2024},
+      eprint={2404.04251},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2404.04251}
 }</code></pre>
   </div>
 </section>
@@ -696,34 +723,26 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
+            This website is based on the <a href="https://nerfies.github.io">Nerfies demo page</a>, which is
+            licensed under a <a rel="license"
                                                 href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            Use it's <a href="https://github.com/nerfies/nerfies.github.io">source code</a> to reproduce and follow its terms of linking back.
           </p>
+          <div class="container has-text-centered">
+            <a href="https://www.youtube.com/watch?v=m2OR_JaXDaM"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmadjackyl.tripod.com%2Fanimcodec.gif&f=1&nofb=1&ipt=3e15c353fce2f04c8394d8d21cd70f9276d05c4a7ab185640485e921e00b9104&ipo=images" style="height:8em;"/></a>
+          </div>
+          <p>Not gonna lie, making a website with Bulma CSS with zero prior knowledge of the framework is a massive pain in the ass. But at least it looks better than my <a href="https://saxon.me/coco-crola/">piece of shit</a> <a href="https://asulidarset.github.io/">previous demos</a>!</p>
+
         </div>
       </div>
     </div>
-  </div>
 </footer>
 
 </body>
