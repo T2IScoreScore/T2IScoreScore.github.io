@@ -46,7 +46,6 @@
 <!-- logo stuff by Michael -->
 <style>
 .logostyle {
-    font-variant:small-caps; 
     font-weight: bold;
     background: -webkit-linear-gradient(#444393, #09A5D9); 
     -webkit-background-clip: text; 
@@ -131,6 +130,56 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
   background-color: lightgoldenrodyellow;
 }
 
+@font-face {
+    font-family: "PlayStation";
+    src: url("./static/fonts/EmotionEngineBold.ttf");
+  }
+
+  @font-face {
+    font-family: "PSLogo";
+    src: url("./static/fonts/Perspire.ttf");
+  }
+
+  .psfont {
+    font-family: "PlayStation";
+    font-variant:small-caps; 
+  }
+  
+  .pslogo {
+    font-family: "PSLogo";
+  }
+
+  .list {
+    margin-left: 1em;
+  }
+
+  .list li {
+    list-style-type: circle;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+  }
+  
+  p a {
+    text-decoration: none;
+    font-weight:600;
+    color: rgb(50, 115, 228) !important;
+  }
+
+  li a {
+    text-decoration: none;
+    font-weight:600;
+    color: rgb(50, 115, 228) !important;
+  }
+
+  p a:hover {
+    text-decoration: underline;
+  }
+
+  li a:hover {
+    text-decoration: underline;
+  }
+
+
 </style>
 
 </head>
@@ -184,39 +233,32 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title"> 
             <!--img src="./static/images/ts2logo.svg" style="height: 0.7em;" alt="TS2"/--> 
-            <emph class="logostyle">T2IScoreScore</emph>: 
-             Measuring the Consistency of Text-to-Image Faithfulness Evaluations
+            <emph class="logostyle psfont">T2IScoreScore</emph> <emph class="logostyle">(<img src="./static/images/ts2logo.svg" style="height: 0.6em;" alt="TS2"/>):</emph> Objectively assessing text-to-image prompt faithfulness metrics 
             </h1>
 
-          <div class="column has-text-centered" style="padding-top: 0;">
-            <img src="./static/images/ts2logo.svg"
-            style="width: 25%;"
-            alt="TS2"/>
-          </div>
-
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://github.com/arenaa">Mahsa Khoshnoodi</a><sup>*1</sup>,</span>
-            <span class="author-block">
-              <a href="https://fatimajahara.com/">Fatima Jahara</a><sup>*1</sup>,</span>
-            <span class="author-block">
-              <a href="https://saxon.me">Michael Saxon</a><sup>*2</sup>,
+            <span class="author-block" style="padding-right:6pt;">
+              <a href="https://saxon.me">Michael Saxon</a><sup><img width="15pt" src="static/images/psx.svg"/><img width="15pt" src="static/images/psc.svg"/></sup>
             </span>
-            <span class="author-block">
-              <a href="https://yujielu10.github.io/">Yujie Lu</a><sup>2</sup>,
+            <span class="author-block" style="padding-right:6pt;">
+              <a href="https://arenaa.github.io/">Mahsa Khoshnoodi</a><sup><img width="15pt" src="static/images/psx.svg"/><img width="15pt" src="static/images/pst.svg"/></sup></span>
+            <span class="author-block" style="padding-right:6pt;">
+              <a href="https://fatimajahara.com/">Fatima Jahara</a><sup><img width="15pt" src="static/images/psx.svg"/><img width="15pt" src="static/images/pst.svg"/></sup></span>
+            <span class="author-block" style="padding-right:6pt;">
+              <a href="https://yujielu10.github.io/">Yujie Lu</a><sup><img width="15pt" src="static/images/psc.svg"/></sup>
             </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=4SRc4qkAAAAJ">Aditya Sharma</a><sup>2</sup>,
+            <span class="author-block" style="padding-right:6pt;">
+              <a href="https://scholar.google.com/citations?user=4SRc4qkAAAAJ">Aditya Sharma</a><sup><img width="15pt" src="static/images/psc.svg"/></sup>
             </span>
-            <span class="author-block">
-              <a href="https://sites.cs.ucsb.edu/~william/">William Yang Wang</a><sup>2</sup>,
+            <span class="author-block" style="padding-right:6pt;">
+              <a href="https://sites.cs.ucsb.edu/~william/">William Yang Wang</a><sup><img width="15pt" src="static/images/psc.svg"/></sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Fatima Al-Fihri Predoctoral Fellowship</span>
-            <span class="author-block"><sup>2</sup>University of California, Santa Barbara</span>
-            <span class="author-block" style="font-style: italic;"><sup>*</sup>Co-first author</span>
+            <span class="author-block" style="font-style: italic;padding-right:6pt;"><sup><img width="15pt" src="static/images/psx.svg"/></sup><b>Co-first authors</b></span>
+            <span class="author-block" style="padding-right:6pt;"><sup><img width="15pt" src="static/images/psc.svg"/></sup>University of California, Santa Barbara</span>
+            <span class="author-block" style="padding-right:6pt;"><sup><img width="15pt" src="static/images/pst.svg"/></sup>Fatima Al-Fihri Predoctoral Fellowship</span>
           </div>
 
 
@@ -233,12 +275,13 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
                 </a>
               </span-->
               <span class="link-block">
-                <a href=""
-                   class="external-link button is-normal is-rounded is-light">
+                <a href="https://arxiv.org/abs/2404.04251"
+                   class="external-link button is-normal is-rounded is-dark"
+                   style="background-color: #c6011f;">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv coming soon</span>
+                  <span>arXiv</span>
                 </a>
               </span>
               <!-- Video Link. -->
@@ -278,309 +321,274 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
         </div>
       </div>
     </div>
+    <div class="container is-max-desktop has-text-centered content">
+          <img src="static/images/ts2teaser.svg" style="width: 100%;"
+          alt="The teaser figure for TS2."/>
   </div>
+  </div>
+  
 </section>
+
 
 <section class="hero teaser">
+
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <emph class="logostyle">T2IScoreScore</emph> (<emph class="logostyle">TS2</emph>) is an evaluation set and meta-metric for assessing the consistency of .
+
+
+    <div class="body">
+      <h2 class="subtitle ">
+        <emph class="logostyle psfont">T2IScoreScore</emph> (<emph class="logostyle">TS2</emph>) assesses how well a T2I metric can correctly <b>order</b> 
+        and <b>separate</b> clusters of images with different error counts with respect to a single prompt using a <b>semantic error graph</b>.
       </h2>
+      <h3 class="subtitle ">
+        Surprisingly, we find that the <b>state-of-the-art LM-based metrics</b> (in terms of human preference correlations) <b>struggle to outperform simple feature-space
+        metrics like CLIPScore</b> at ordering or separating closely related sets of images.
+      </h3>
+      <h3 class="subtitle ">
+        Our benchmark dataset consists of 165 prompts, each with a connected <emph>Semantic Error Graph</emph> (SEG) of 4 to 76 images arranged by specific semantic errors relative to the prompt (see above image for example).
+        Evaluating text-to-image prompt faithfulness metrics in this way is more rigorous than human preference evaluations which don't consider fine-grained, near neighbor images against the same prompt (which is what T2I metrics are supposed to measure).
+        <emph class="logostyle">TS2</emph> can evaluate any T2I faithfulness metric as a <b>black-box</b>.
+      </h3>
+      &nbsp;
     </div>
   </div>
 </section>
 
 
-<section class="hero is-light is-small">
+
+
+
+<section class="hero is-light ">
   <div class="hero-body">
-    <div class="container">
-      <!--div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div-->
-      <h3 class="title is-4">Under construction! Based on the nerfies page</h3>
-    </div>
+    <div class="container is-max-desktop">
+      <h3 class="title is-4">Check out our <emph class="logostyle">Interactive Leaderboard!</emph></h3>
+      <p>
+        <b>Click on any column title to sort the table by that variable.</b> Deeper method details follow table. Explanation of columns: 
+      </p>
 
-  </div>
-</section>
+      <ul class="list">
+        <li><b>Ord</b> is a measure of how well a metric correctly orders images by semantic error count based on <a href="https://en.wikipedia.org/wiki/Spearman's_rank_correlation_coefficient">Spearman's correalation</a>.</li>
+        <li><b>Sep</b> is a measure of how well a metric separates pairs of clusters that differ in semantic errors based on the <a href="https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test#Two-sample_Kolmogorov%E2%80%93Smirnov_test">two-sample Kolmogorov&ndash;Smirnov statistic</a>.</li>
+        <li><b>*<sub>Avg</sub></b> is average of measure <b>*</b> over all Semantic Error Graphs (SEGs) in <emph class="logostyle">TS2</emph>.</li>
+        <li><b>*<sub>Synth</sub></b> is the average of measure <b>*</b> over our artificially designed SEGs. <b>These are the easiest types of errors to detect</b>.</li>
+        <li><b>*<sub>Nat</sub></b> is the average of measure <b>*</b> over SEGs using <b>real stock photos</b> rather than generated images, with artificially constructed "prompts" to place them in an error graph.</li>
+        <li><b>*<sub>Real</sub></b> is the average over SEGs containing <i>natural errors</i> from real text-to-image model generation attempts. <b>This is both the hardest to score and the most construct-valid</b>.</li>
+        <li>Because we tested several different backend LLMs for <span class="dsg">DSG</span> and <span class="tifa">TIFA</span>, their rows are color coded for readability.</li>
+      </ul>
 
-<section class="section">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-full has-text-centered content">
-        <h2 class="title is-3">Leaderboard</h2>
-        <table class="js-sort-table" id="results">
-          <thead>
-            <tr style="background: -webkit-linear-gradient(#444393, #09A5D9);">
-              <td></td>
-              <td colspan="2"><strong style="color: white;">Average (All Images)</strong></td>
-              <td colspan="2"><strong style="color: white;">Synthetic Errors</strong></td>
-              <td colspan="2"><strong style="color: white;">Natural Images</strong></td>
-              <td colspan="2"><strong style="color: white;">Natural Errors</strong></td>
-            </tr>
-            <tr style="background-color: rgb(213,213,213);">
-              <td class="js-sort-number"><strong>Method</strong></td>
-              <td class="js-sort-number"><strong>S<sub>Avg</sub></strong></td>
-              <td class="js-sort-number"><strong>V<sub>Avg</sub></strong></td>
-              <td class="js-sort-number"><strong>S<sub>Synth</sub></strong></td>
-              <td class="js-sort-number"><strong>V<sub>Synth</sub></strong></td>
-              <td class="js-sort-number"><strong>S<sub>Nat</sub></strong></td>
-              <td class="js-sort-number"><strong>V<sub>Nat</sub></strong></td>
-              <td class="js-sort-number"><strong>S<sub>Real</sub></strong></td>
-              <td class="js-sort-number"><strong>V<sub>Real</sub></strong></td>  
-            </tr>
-          </thead>
-          <tr class="dsg">
-            <td>DSG + InstructBLIP</td>
-            <td><b class="best-score-text">0.802</b></td>
-            <td>0.843</td>
-            <td><b class="best-score-text">0.861</b></td>
-            <td>0.888</td>
-            <td>0.702</td>
-            <td>0.815</td>
-            <td>0.658</td>
-            <td>0.689</td>
-          </tr>
-          <tr class="dsg">
-            <td>DSG + LLaVA-1.5</td>
-            <td><u><b>0.800</b></u></td>
-            <td>0.825</td>
-            <td><u><b>0.838</b></u></td>
-            <td>0.855</td>
-            <td><b class="best-score-text">0.749</b></td>
-            <td>0.751</td>
-            <td><u><b>0.696</b></u></td>
-            <td>0.768</td>
-          </tr>
-          <tr class="dsg">
-            <td>DSG + BLIP1</td>
-            <td>0.769</td>
-            <td>0.806</td>
-            <td>0.817</td>
-            <td>0.841</td>
-            <td><u><b>0.710</b></u></td>
-            <td>0.751</td>
-            <td>0.628</td>
-            <td>0.714</td>
-          </tr>
-          <tr class="tifa">
-            <td>TIFA + InstructBLIP</td>
-            <td>0.765</td>
-            <td>0.850</td>
-            <td>0.802</td>
-            <td>0.867</td>
-            <td>0.651</td>
-            <td>0.828</td>
-            <td><b class="best-score-text">0.716</b></td>
-            <td>0.805</td>
-          </tr>
-          <tr class="dsg">
-            <td>DSG + LLaVA-1.5 (w/prompt eng)</td>
-            <td>0.756</td>
-            <td>0.805</td>
-            <td>0.821</td>
-            <td>0.838</td>
-            <td>0.689</td>
-            <td>0.772</td>
-            <td>0.559</td>
-            <td>0.706</td>
-          </tr>
-          <tr class="tifa">
-            <td>TIFA + LLaVA-1.5</td>
-            <td>0.745</td>
-            <td>0.843</td>
-            <td>0.792</td>
-            <td>0.875</td>
-            <td>0.628</td>
-            <td>0.834</td>
-            <td>0.667</td>
-            <td>0.727</td>
-          </tr>
-          <tr class="tifa">
-            <td>TIFA + LLaVA-1.5 (w/prompt eng)</td>
-            <td>0.744</td>
-            <td>0.819</td>
-            <td>0.792</td>
-            <td>0.852</td>
-            <td>0.640</td>
-            <td>0.756</td>
-            <td>0.645</td>
-            <td>0.744</td>
-          </tr>
-          <tr>
-            <td>ALIGNScore</td>
-            <td>0.739</td>
-            <td><b class="best-score-text">0.928</b></td>
-            <td>0.776</td>
-            <td><b class="best-score-text">0.941</b></td>
-            <td>0.702</td>
-            <td><b class="best-score-text">0.926</b></td>
-            <td>0.626</td>
-            <td><u><b>0.879</b></u></td>
-          </tr>
-          <tr class="tifa">
-            <td>TIFA+ BLIP1</td>
-            <td>0.738</td>
-            <td>0.818</td>
-            <td>0.788</td>
-            <td>0.841</td>
-            <td>0.622</td>
-            <td>0.779</td>
-            <td>0.640</td>
-            <td>0.764</td>
-          </tr>
-          <tr>
-            <td>CLIPScore</td>
-            <td>0.714</td>
-            <td><u><b>0.907</b></u></td>
-            <td>0.750</td>
-            <td><u><b>0.905</b></u></td>
-            <td>0.580</td>
-            <td><u><b>0.915</b></u></td>
-            <td>0.693</td>
-            <td><b class="best-score-text">0.903</b></td>
-          </tr>
-          <tr class="tifa">
-            <td>TIFA + MPlug</td>
-            <td>0.710</td>
-            <td>0.806</td>
-            <td>0.726</td>
-            <td>0.806</td>
-            <td>0.669</td>
-            <td>0.842</td>
-            <td>0.682</td>
-            <td>0.774</td>
-          </tr>
-          <tr class="dsg">
-            <td>DSG + MPlug</td>
-            <td>0.688</td>
-            <td>0.755</td>
-            <td>0.735</td>
-            <td>0.771</td>
-            <td>0.619</td>
-            <td>0.706</td>
-            <td>0.564</td>
-            <td>0.731</td>
-          </tr>
-          <tr class="llmscore">
-            <td>LLMScore Over</td>
-            <td>0.577</td>
-            <td>0.735</td>
-            <td>0.616</td>
-            <td>0.728</td>
-            <td>0.444</td>
-            <td>0.767</td>
-            <td>0.541</td>
-            <td>0.736</td>
-          </tr>
-          <tr class="llmscore">
-            <td>LLMScore EC</td>
-            <td>0.488</td>
-            <td>0.736</td>
-            <td>0.502</td>
-            <td>0.711</td>
-            <td>0.362</td>
-            <td>0.805</td>
-            <td>0.544</td>
-            <td>0.773</td>
-          </tr>
-          <tr class="tifa">
-            <td>TIFA + Fuyu</td>
-            <td>0.387</td>
-            <td>0.672</td>
-            <td>0.445</td>
-            <td>0.673</td>
-            <td>0.235</td>
-            <td>0.757</td>
-            <td>0.297</td>
-            <td>0.593</td>
-          </tr>
-          <tr>
-            <td>VIEScore + LLaVA-1.5</td>
-            <td>0.378</td>
-            <td>0.518</td>
-            <td>0.425</td>
-            <td>0.537</td>
-            <td>0.224</td>
-            <td>0.445</td>
-            <td>0.332</td>
-            <td>0.507</td>
-          </tr>
-          <tr class="dsg">
-            <td>DSG + Fuyu</td>
-            <td>0.358</td>
-            <td>0.660</td>
-            <td>0.455</td>
-            <td>0.687</td>
-            <td>0.215</td>
-            <td>0.710</td>
-            <td>0.100</td>
-            <td>0.508</td>
-          </tr>
-        </table>
-        <p><emph>Table 1</emph>: 
-          Click on any column title to sort the table by that variable. 
-          <emph>S<sub>partition</sub></emph> metrics refer to our Spearman correlation-based measure of how correctly a given metric ranks the faithfulness of generated images to prompts within sets.
-          <emph>V<sub>partition</sub></emph> metrics refer to how well a given metric separates clusters of images in terms of faithfulness scoring with the two sample Kolmogoro&ndash;Smirnov statistic.
-          <emph>All</emph> partition is the average of the scores across all prompt IDs in our dataset.
-          <emph>Synth</emph> partition refers to synthetic errors realized by synthetic images. These are the easiest types of errors to detect.
-          <emph>Nat</emph> partition refers to natural images collected from stock image websites taken in a photoshoot, where "errors" are realized by a prompt being assigned to the set of images to produce natural "errors" of images that vary from the prompt.
-          <emph>Real</emph> partition refers to <i>natural errors</i> produced by text-to-image models, which are the most difficult to detect.
-          <span class="llmscore">LLMScore</span>, <span class="dsg">DSG</span>, and <span class="tifa">TIFA</span> variants are color coded for readability.
-        </p>
-      </div>
+
+      
     </div>
+    <table class="js-sort-table" id="results">
+      <thead>
+        <tr >
+          <td></td>
+          <td colspan="2"><strong>Average (All Images)</strong></td>
+          <td colspan="2"><strong>Synthetic Errors</strong></td>
+          <td colspan="2"><strong>Natural Images</strong></td>
+          <td colspan="2"><strong>Natural Errors</strong></td>
+        </tr>
+        <tr style="background-color: rgb(213,213,213);">
+          <td class="js-sort-number"><strong>Method</strong></td>
+          <td class="js-sort-number"><strong>Ord<sub>Avg</sub></strong></td>
+          <td class="js-sort-number"><strong>Sep<sub>Avg</sub></strong></td>
+          <td class="js-sort-number"><strong>Ord<sub>Synth</sub></strong></td>
+          <td class="js-sort-number"><strong>Sep<sub>Synth</sub></strong></td>
+          <td class="js-sort-number"><strong>Ord<sub>Nat</sub></strong></td>
+          <td class="js-sort-number"><strong>Sep<sub>Nat</sub></strong></td>
+          <td class="js-sort-number"><strong>Ord<sub>Real</sub></strong></td>
+          <td class="js-sort-number"><strong>Sep<sub>Real</sub></strong></td>  
+        </tr>
+      </thead>
+      <tr class="dsg">
+        <td>DSG + InstructBLIP</td>
+        <td><b class="best-score-text">0.802</b></td>
+        <td>0.843</td>
+        <td><b class="best-score-text">0.861</b></td>
+        <td>0.888</td>
+        <td>0.702</td>
+        <td>0.815</td>
+        <td>0.658</td>
+        <td>0.689</td>
+      </tr>
+      <tr class="dsg">
+        <td>DSG + LLaVA-1.5</td>
+        <td><u><b>0.800</b></u></td>
+        <td>0.825</td>
+        <td><u><b>0.838</b></u></td>
+        <td>0.855</td>
+        <td><b class="best-score-text">0.749</b></td>
+        <td>0.751</td>
+        <td><u><b>0.696</b></u></td>
+        <td>0.768</td>
+      </tr>
+      <tr class="dsg">
+        <td>DSG + BLIP1</td>
+        <td>0.769</td>
+        <td>0.806</td>
+        <td>0.817</td>
+        <td>0.841</td>
+        <td><u><b>0.710</b></u></td>
+        <td>0.751</td>
+        <td>0.628</td>
+        <td>0.714</td>
+      </tr>
+      <tr class="tifa">
+        <td>TIFA + InstructBLIP</td>
+        <td>0.765</td>
+        <td>0.850</td>
+        <td>0.802</td>
+        <td>0.867</td>
+        <td>0.651</td>
+        <td>0.828</td>
+        <td><b class="best-score-text">0.716</b></td>
+        <td>0.805</td>
+      </tr>
+      <tr class="dsg">
+        <td>DSG + LLaVA-1.5 (w/prompt eng)</td>
+        <td>0.756</td>
+        <td>0.805</td>
+        <td>0.821</td>
+        <td>0.838</td>
+        <td>0.689</td>
+        <td>0.772</td>
+        <td>0.559</td>
+        <td>0.706</td>
+      </tr>
+      <tr class="tifa">
+        <td>TIFA + LLaVA-1.5</td>
+        <td>0.745</td>
+        <td>0.843</td>
+        <td>0.792</td>
+        <td>0.875</td>
+        <td>0.628</td>
+        <td>0.834</td>
+        <td>0.667</td>
+        <td>0.727</td>
+      </tr>
+      <tr class="tifa">
+        <td>TIFA + LLaVA-1.5 (w/prompt eng)</td>
+        <td>0.744</td>
+        <td>0.819</td>
+        <td>0.792</td>
+        <td>0.852</td>
+        <td>0.640</td>
+        <td>0.756</td>
+        <td>0.645</td>
+        <td>0.744</td>
+      </tr>
+      <tr>
+        <td>ALIGNScore</td>
+        <td>0.739</td>
+        <td><b class="best-score-text">0.928</b></td>
+        <td>0.776</td>
+        <td><b class="best-score-text">0.941</b></td>
+        <td>0.702</td>
+        <td><b class="best-score-text">0.926</b></td>
+        <td>0.626</td>
+        <td><u><b>0.879</b></u></td>
+      </tr>
+      <tr class="tifa">
+        <td>TIFA+ BLIP1</td>
+        <td>0.738</td>
+        <td>0.818</td>
+        <td>0.788</td>
+        <td>0.841</td>
+        <td>0.622</td>
+        <td>0.779</td>
+        <td>0.640</td>
+        <td>0.764</td>
+      </tr>
+      <tr>
+        <td>CLIPScore</td>
+        <td>0.714</td>
+        <td><u><b>0.907</b></u></td>
+        <td>0.750</td>
+        <td><u><b>0.905</b></u></td>
+        <td>0.580</td>
+        <td><u><b>0.915</b></u></td>
+        <td>0.693</td>
+        <td><b class="best-score-text">0.903</b></td>
+      </tr>
+      <tr class="tifa">
+        <td>TIFA + MPlug</td>
+        <td>0.710</td>
+        <td>0.806</td>
+        <td>0.726</td>
+        <td>0.806</td>
+        <td>0.669</td>
+        <td>0.842</td>
+        <td>0.682</td>
+        <td>0.774</td>
+      </tr>
+      <tr class="dsg">
+        <td>DSG + MPlug</td>
+        <td>0.688</td>
+        <td>0.755</td>
+        <td>0.735</td>
+        <td>0.771</td>
+        <td>0.619</td>
+        <td>0.706</td>
+        <td>0.564</td>
+        <td>0.731</td>
+      </tr>
+      <tr>
+        <td>LLMScore Over</td>
+        <td>0.577</td>
+        <td>0.735</td>
+        <td>0.616</td>
+        <td>0.728</td>
+        <td>0.444</td>
+        <td>0.767</td>
+        <td>0.541</td>
+        <td>0.736</td>
+      </tr>
+      <tr>
+        <td>LLMScore EC</td>
+        <td>0.488</td>
+        <td>0.736</td>
+        <td>0.502</td>
+        <td>0.711</td>
+        <td>0.362</td>
+        <td>0.805</td>
+        <td>0.544</td>
+        <td>0.773</td>
+      </tr>
+      <tr class="tifa">
+        <td>TIFA + Fuyu</td>
+        <td>0.387</td>
+        <td>0.672</td>
+        <td>0.445</td>
+        <td>0.673</td>
+        <td>0.235</td>
+        <td>0.757</td>
+        <td>0.297</td>
+        <td>0.593</td>
+      </tr>
+      <tr>
+        <td>VIEScore + LLaVA-1.5</td>
+        <td>0.378</td>
+        <td>0.518</td>
+        <td>0.425</td>
+        <td>0.537</td>
+        <td>0.224</td>
+        <td>0.445</td>
+        <td>0.332</td>
+        <td>0.507</td>
+      </tr>
+      <tr class="dsg">
+        <td>DSG + Fuyu</td>
+        <td>0.358</td>
+        <td>0.660</td>
+        <td>0.455</td>
+        <td>0.687</td>
+        <td>0.215</td>
+        <td>0.710</td>
+        <td>0.100</td>
+        <td>0.508</td>
+      </tr>
+    </table>
+
   </div>
 </section>
 
@@ -593,154 +601,75 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Todo!
+            With advances in the quality of text-to-image (T2I) models has come interest in benchmarking their performance in terms <i>prompt faithfulness</i>&mdash;semantic coherence of generated images to their conditioning prompts.
+            Leveraging advances in cross-modal embeddings and vision-language models (VLMs), a variety of T2I faithfulness metrics have been proposed.
+            However, these metrics are not rigorously compared and benchmarked, instead presented against a single weak baseline using correlation to human Likert scores over a set of easy-to-discriminate images. 
+            We introduce <emph class="logostyle">T2IScoreScore</emph>, a carefully curated set of 
+            <i>semantic error graphs</i> consisting of a prompt and a set of images containing increasing numbers of errors. 
+            This allows us to rigorously judge whether a prompt faithfulness metric under test can correctly order images with respect to their objective error count and significantly discriminate 
+            between different error nodes novel scores derived from established statistical tests.
+            Surprisingly, we find that the state-of-the-art VLM-based 
+            metrics (e.g., TIFA, DSG, LLMScore, VIEScore) we tested fail to significantly outperform simple feature-based metrics like CLIPScore, particularly on a hard subset of naturally-occurring T2I model 
+            errors.
+            <emph class="logostyle">T2IScoreScore</emph> will enable the development of better T2I prompt faithfulness metrics by enabling their rigorous comparison on near-neighbor images with significant semantic differences.
+
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <!-- div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div-->
-    <!--/ Paper video. -->
   </div>
 </section>
 
 
 <section class="section">
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Thing 1</h2>
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Details on the Semantic Error Graphs (SEGs)</h2>
+        <div class="content has-text-justified">
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            With advances in the quality of text-to-image (T2I) models has come interest in benchmarking their performance in terms <i>prompt faithfulness</i>&mdash;semantic coherence of generated images to their conditioning prompts.
+            Leveraging advances in cross-modal embeddings and vision-language models (VLMs), a variety of T2I faithfulness metrics have been proposed.
+            However, these metrics are not rigorously compared and benchmarked, instead presented against a single weak baseline using correlation to human Likert scores over a set of easy-to-discriminate images. 
+            We introduce <emph class="logostyle">T2IScoreScore</emph>, a carefully curated set of 
+            <i>semantic error graphs</i> consisting of a prompt and a set of images containing increasing numbers of errors. 
+            This allows us to rigorously judge whether a prompt faithfulness metric under test can correctly order images with respect to their objective error count and significantly discriminate 
+            between different error nodes novel scores derived from established statistical tests.
+            Surprisingly, we find that the state-of-the-art VLM-based 
+            metrics (e.g., TIFA, DSG, LLMScore, VIEScore) we tested fail to significantly outperform simple feature-based metrics like CLIPScore, particularly on a hard subset of naturally-occurring T2I model 
+            errors.
+            <emph class="logostyle">T2IScoreScore</emph> will enable the development of better T2I prompt faithfulness metrics by enabling their rigorous comparison on near-neighbor images with significant semantic differences.
+
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Thing 2</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
+  </div>
+</section>
 
 
+
+<section class="section">
+  <div class="container is-max-desktop">
     <!-- Concurrent Work. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
+        <h2 class="title is-3">Related Work</h2>
 
         <div class="content has-text-justified">
           <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
+            Our work is fundamentally based on evaluating other groups' metrics. <a href="https://wysiwyr-itm.github.io/">SeeTrue</a> is the closest work to our philosophy,
+            with its similar focus on using near-neighbor images to assess T2I models, and investigating mutli-image to single prompt and multi-prompt to single image settings, and also use images.
+            However, they focus more using these examples to build a faithfulness metric that can be used to assess VNLI and VQA tasks directly, rather than using them to evaluate T2I metrics themselves.
           </p>
           <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+            The main metrics we analyzed, <a href="https://tifa-benchmark.github.io/">TIFA</a> and <a href="https://google.github.io/dsg/">DSG</a> from Yushi Hu and Jaemin Cho are both very influential.
+            We hope that TS2-guided evaluation will enable better metrics inspired from their work.
           </p>
           <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+            The captioning based metrics we evaluated, <a href="https://github.com/yujielu10/llmscore">LLMScore</a> and <a href="https://tiger-ai-lab.github.io/VIEScore/">VIEScore</a> both stand
+            to benefit a lot from advancements in VLMs and captioning models.
           </p>
         </div>
       </div>
@@ -748,17 +677,18 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
     <!--/ Concurrent Work. -->
 
   </div>
-</section>
 
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
+  <div class="hero container">
+    &nbsp;<br>&nbsp;
+  </div>
+  
+  <div class="container is-max-desktop content" id="BibTeX">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@unpublished{saxon2024ts2,
+  author    = {Saxon, Michael and Jahara, Fatima and Khoshnoodi, Mahsa and Lu, Yujie and Sharma, Aditya and Wang, William Yang},
+  title     = {Who Evaluates the Evaluations? Objectively Scoring Text-to-Image Prompt Coherence Metrics with T2IScoreScore (TS2)},
+  year      = {2024},
+  url       = {https://T2IScoreScore.github.io/}
 }</code></pre>
   </div>
 </section>
